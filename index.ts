@@ -1,1 +1,19 @@
-console.info('Hello World');
+import sdk = require("@anthropic-ai/sdk");
+const {loadEnvFile} = require('node:process')
+loadEnvFile('.env');
+
+
+const anthropic = new sdk.Anthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY!,
+});
+
+async function main() {
+  const msg = await anthropic.messages.create({
+    model: "claude-sonnet-4-5",
+    max_tokens: 1024,
+    messages: [{ role: "user", content: "Hello, Claude" }],
+  });
+  console.log(msg);
+}
+
+main();
