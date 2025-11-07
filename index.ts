@@ -6,23 +6,6 @@ import { mcpServer } from './mcp-server.js'
 
 loadEnvFile('.env');
 
-// Prompt chain repo: https://github.com/bitovi/ai-enablement-prompts/tree/main/understanding-code/instruction-generation
-
-// hello, how are you? I'm a pesonal AI assistant
-// yoooooooo
-// wazzzuuuuuuuuupppp
-
-// Using anthropic SDK
-// const anthropic = new Anthropic({
-//     apiKey: process.env.ANTHROPIC_API_KEY!,
-// });
-
-// const msg = await anthropic.messages.create({
-//     model: "claude-sonnet-4-5",
-//     max_tokens: 1024,
-//     messages: [{ role: "user", content: "Hello, Claude" }],
-// });
-// console.log(msg);
 
 const mcp = createSdkMcpServer(mcpServer)
 
@@ -32,9 +15,9 @@ const options: Options = {
     // model: "claude-3-haiku-20240307",
     mcpServers: {
         'test-server': mcp
-    }
+    },
 }
 
 
 // Using claude agent sdk
-await generateInstructions(chainPath, "/.instructions-tmp", "instructions.md", options);
+await generateInstructions(chainPath, "./", "/.instructions-tmp", "instructions.md", options);
