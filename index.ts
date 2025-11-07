@@ -1,9 +1,11 @@
-import sdk = require("@anthropic-ai/sdk");
-const {loadEnvFile} = require('node:process')
+import {Anthropic} from '@anthropic-ai/sdk';
+import { loadEnvFile } from 'node:process';
+
 loadEnvFile('.env');
 
 
-const anthropic = new sdk.Anthropic({
+
+const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY!,
 });
 
