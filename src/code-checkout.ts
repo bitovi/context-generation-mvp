@@ -1,12 +1,23 @@
 import { simpleGit } from 'simple-git';
+import path from 'path';
+
+import {mkdirSync, existsSync, rmSync } from 'fs';
 
 export async function checkoutRepo(targetPath: string, repoUrl: string, branch: string) {
-    const git = simpleGit(targetPath, {})
+    if(existsSync(targetPath)) {
+        rmSync(targetPath, { recursive: true });
+    }
+    mkdirSync(targetPath, { recursive: true });
+    
+
+    let git = simpleGit(targetPath, {});
     await git.clone(repoUrl);
+    const repoName = repoUrl.split('/').pop()?.replace('.git', '')  ?? '';
+    git = simpleGit(path.join(targetPath, repoName), {});
     await git.fetch();
-    await git.checkoutLocalBranch(branch);
+    await git.checkout(branch);
     
 }
 
-// may be broken becuase of nested repo folders?
-checkoutRepo('./repo-tmp', 'https://github.com/bitovi/ai-enablement-prompts.git','feat/FE-463777');
+
+// checkoutRepo('./repo-tmp', 'https://github.com/bitovi/ai-enablement-prompts.git','feat/FE-463777');

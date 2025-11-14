@@ -1,5 +1,5 @@
 # Sample issue-to-context config
-repo: https://github.com/bitovi/context-generation-mvp
-featureBranch: sample
+repo: https://github.com/bitovi/bitballs.git
+featureBranch: prompt-engineering/group-b
 context:
   jira: http://jia.com/fake-path
