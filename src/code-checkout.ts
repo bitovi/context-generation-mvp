@@ -2,14 +2,11 @@ import { simpleGit } from 'simple-git';
 import path from 'path';
 
 import {mkdirSync, existsSync, rmSync } from 'fs';
+import { createDirCleanIfExistsSync } from './clean.js';
 
 export async function checkoutRepo(targetPath: string, repoUrl: string, branch: string) {
-    if(existsSync(targetPath)) {
-        rmSync(targetPath, { recursive: true });
-    }
-    mkdirSync(targetPath, { recursive: true });
+    createDirCleanIfExistsSync(targetPath);
     
-
     let git = simpleGit(targetPath, {});
     await git.clone(repoUrl);
     const repoName = repoUrl.split('/').pop()?.replace('.git', '')  ?? '';
