@@ -2,5 +2,10 @@
 repo: https://github.com/bitovi/bitballs.git
 baseBranch: master
 featureBranch: prompt-engineering/group-b
+
+# Additional context (optional, not used currentlu)
 context:
   jira: http://jia.com/fake-path
+
+# Optional override for instruction file name (defaults to instructions.md))
+# instructionFileName: instructions.md

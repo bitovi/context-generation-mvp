@@ -1,3 +1,4 @@
+import path from "path";
 import { createDirCleanIfExistsSync } from "./clean.js";
 import { checkoutRepo } from "./code-checkout.js";
 import { loadConfig } from "./config.js";
@@ -8,10 +9,14 @@ export async function contextGenerationRunner(configFilePath: string) {
     const config = loadConfig(configFilePath);
     console.log('Loaded config:', config);
 
-    await checkoutRepo('./repo-tmp/base', config.repo, config.baseBranch);
-    await checkoutRepo('./repo-tmp/feature', config.repo, config.featureBranch);
+    const tmpPath = path.join('.','tmp');
+    const basePath = path.join('.','repo-tmp','base');
+    const featurePath = path.join('.','repo-tmp','feature');
 
-    createDirCleanIfExistsSync('./tmp');
-    
-    await generateInstructions('./repo-tmp/feature', './tmp', 'instructions.md');
+    await checkoutRepo(basePath, config.repo, config.baseBranch);
+    await checkoutRepo(featurePath, config.repo, config.featureBranch);
+
+    createDirCleanIfExistsSync(tmpPath);
+
+    await generateInstructions(featurePath, tmpPath, 'instructions.md', true);
 }

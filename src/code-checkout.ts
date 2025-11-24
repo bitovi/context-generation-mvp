@@ -1,9 +1,15 @@
 import { simpleGit } from 'simple-git';
 import path from 'path';
 
-import {mkdirSync, existsSync, rmSync } from 'fs';
 import { createDirCleanIfExistsSync } from './clean.js';
 
+/**
+ * Checks out branch of a git repo into targetPath
+ * 
+ * @param targetPath Base path to check branches into
+ * @param repoUrl 
+ * @param branch 
+ */
 export async function checkoutRepo(targetPath: string, repoUrl: string, branch: string) {
     createDirCleanIfExistsSync(targetPath);
     
@@ -15,6 +21,3 @@ export async function checkoutRepo(targetPath: string, repoUrl: string, branch: 
     await git.checkout(branch);
     
 }
-
-
-// checkoutRepo('./repo-tmp', 'https://github.com/bitovi/ai-enablement-prompts.git','feat/FE-463777');

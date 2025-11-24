@@ -28,4 +28,4 @@ Add all your findings to ./{output-folder}/1-techstack.md
 
 The domain analysis should help future prompts understand what types of new features would fit vs. conflict with the existing application architecture.
 
-Once completed, continue to skill [./2-categorize-files.md](./2-categorize-files.md) and continue on accordingly with {output-folder} as the `output-folder`
+Once completed, continue to skill 2-categorize-files and continue on accordingly with {output-folder} as the `output-folder`
