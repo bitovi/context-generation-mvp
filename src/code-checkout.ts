@@ -1,12 +1,23 @@
 import { simpleGit } from 'simple-git';
+import path from 'path';
 
+import { createDirCleanIfExistsSync } from './clean.js';
+
+/**
+ * Checks out branch of a git repo into targetPath
+ * 
+ * @param targetPath Base path to check branches into
+ * @param repoUrl 
+ * @param branch 
+ */
 export async function checkoutRepo(targetPath: string, repoUrl: string, branch: string) {
-    const git = simpleGit(targetPath, {})
+    createDirCleanIfExistsSync(targetPath);
+    
+    let git = simpleGit(targetPath, {});
     await git.clone(repoUrl);
+    const repoName = repoUrl.split('/').pop()?.replace('.git', '')  ?? '';
+    git = simpleGit(path.join(targetPath, repoName), {});
     await git.fetch();
-    await git.checkoutLocalBranch(branch);
+    await git.checkout(branch);
     
 }
-
-// may be broken becuase of nested repo folders?
-checkoutRepo('./repo-tmp', 'https://github.com/bitovi/ai-enablement-prompts.git','feat/FE-463777');
