@@ -36,5 +36,3 @@ Requirements:
 - Only describe what is actually used in this project.
 
 Your goal is to document how the "{domain}" domain is implemented within this specific codebase in such a way that anyone could leverage or add features to it.
-
-After writing each of the domain files, continue to skill 5-styleguide-generation and proceed accordingly with {output-folder} as the `output-folder`.

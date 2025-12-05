@@ -65,6 +65,4 @@ Only include domains you find concrete evidence for based on the actual codebase
 
 This analysis will help ensure future additions follow the established architectural patterns rather than introducing inconsistent approaches.
 
-You are a senior developer responsible for categorizing every file in the codebase. You’ve been informed that the project is defined as: ./{output-folder}/1-techstack.md (read this file first)
-
-After writing ./{output-folder}/3-file-categorization.json, continue to skill 4-domain-deep-dive and proceed accordingly with {output-folder} as the `output-folder`.
+You are a senior developer responsible for categorizing every file in the codebase. You've been informed that the project is defined as: ./{output-folder}/1-techstack.md (read this file first)
