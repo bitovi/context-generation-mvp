@@ -1,8 +1,8 @@
-import path from "path";
-import { createDirCleanIfExistsSync } from "./clean.js";
-import { checkoutRepo } from "./code-checkout.js";
-import { loadConfig } from "./config.js";
-import { generateInstructions } from "./instruction-generator.js";
+import * as path from "path";
+import { createDirCleanIfExistsSync } from "./clean";
+import { checkoutRepo } from "./code-checkout";
+import { loadConfig } from "./config";
+import { generateInstructions } from "./instruction-generator";
 
 
 export async function contextGenerationRunner(configFilePath: string) {
