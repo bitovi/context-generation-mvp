@@ -6,7 +6,10 @@ import * as path from 'path';
 // Load environment variables from .env file
 dotenv.config();
 
-describe('Anthropic API', () => {
+const isCI = process.env.GITHUB_ACTIONS === 'true';
+const describeIfNotCI = isCI ? describe.skip : describe;
+
+describeIfNotCI('Anthropic API', () => {
   test('sends a prompt and receives a response', async () => {
     const apiKey = process.env.ANTHROPIC_TEST_KEY;
     
