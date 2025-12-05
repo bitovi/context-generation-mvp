@@ -32,5 +32,3 @@ You are permitted to take as long as necessary to:
 - Review every relevant file
 - Extract actual patterns and conventions
 - Produce complete, high-fidelity output
-
-After writing ./{output-folder}/2-file-categorization.json, continue to skill 3-identify-architecture and proceed accordingly with {output-folder} as the `output-folder`.
