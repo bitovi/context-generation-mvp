@@ -1,7 +1,7 @@
 import { simpleGit } from 'simple-git';
-import path from 'path';
+import * as path from 'path';
 
-import { createDirCleanIfExistsSync } from './clean.js';
+import { createDirCleanIfExistsSync } from './clean';
 
 /**
  * Checks out branch of a git repo into targetPath
