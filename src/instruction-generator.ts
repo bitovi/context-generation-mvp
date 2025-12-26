@@ -14,7 +14,7 @@ export async function generateInstructions(srcPath: string, outputPath: string, 
     console.log('Starting instruction generation');
 
     const prompt = `
-    Please execute skill 1-determine-techstack on the files in  "${srcPath}". Use "${outputPath}" as the output_folder and "${finalInstructionFile}" as the final_output_file. 
+    Please execute skill 1-determine-techstack on the files in "${srcPath}". Use "${outputPath}" as the output_folder and "${finalInstructionFile}" as the final_output_file. 
     Continue working through each step, each of which is represented by a separate skill until all 6 have run and a final instruction file is built.
     If any skill takes longer than 15 minutes, stop iterating on that skill as soon as possible and move on to the next step. Keep track of any skills that must be ended early and mention them at the end of the process.
     `;

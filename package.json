@@ -5,7 +5,9 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "tsx index.ts",
+    "start": "tsx scripts/context-generation.ts",
+    "context": "tsx scripts/context-generation.ts",
+    "prompt": "tsx scripts/prompt.ts",
     "test": "jest --color --runInBand",
     "test:watch": "jest --color --watch",
     "coverage": "jest --coverage"

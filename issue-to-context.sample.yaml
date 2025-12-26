@@ -1,11 +1,9 @@
 # Sample issue-to-context config
-repo: https://github.com/bitovi/bitballs.git
-baseBranch: master
-featureBranch: prompt-engineering/group-b
+repo: https://github.com/bitovi/cascade-mcp.git
+base: https://github.com/bitovi/cascade-mcp/pull/70 # branch, commit or PR URL to base off of
+featureBranch: context-generation-example # new branch to create
+prTarget: main # if PR is provided for baseBranch, specify target branch here - to-do: fetch metadata in script and remove prTarget option?
 
-# Additional context (optional, not used currentlu)
-context:
-  jira: http://jia.com/fake-path
-
+promptFilePath: ./PROMPT.md
 # Optional override for instruction file name (defaults to instructions.md))
 # instructionFileName: instructions.md
