@@ -8,6 +8,7 @@
     "start": "tsx scripts/context-generation.ts",
     "context": "tsx scripts/context-generation.ts",
     "prompt": "tsx scripts/prompt.ts",
+    "compare": "tsx scripts/compare.ts",
     "test": "jest --color --runInBand",
     "test:watch": "jest --color --watch",
     "coverage": "jest --coverage"

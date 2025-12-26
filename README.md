@@ -19,7 +19,7 @@ This tool helps you generate context-aware instructions for implementing changes
 2. **Generate Context** - Run `npm run context` to analyze the repository and generate instructions in `/tmp`
 3. **Edit Prompt** - Modify `PROMPT.md` with your desired changes
 4. **Apply Changes** - Run `npm run prompt` to have the AI implement your prompt
-5. **Review & Iterate** - Verify changes, commit, and open PR if satisfied
+5. **Review & Iterate** - If necessary, run `npm run compare` to have AI compare implementation to original PR and suggest improvements to `instructions.md`.
 
 ### Iteration & Flexibility
 
