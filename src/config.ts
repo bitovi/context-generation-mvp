@@ -6,8 +6,9 @@ export type Config = {
   base: string;
   featureBranch: string;
   prTarget?: string;
-  instructionFileName: string;
+  instructionFileName?: string;
   promptFilePath: string;
+  maxLines?: number;
 };
 
 export function loadConfig(yamlPath: string): Config {
@@ -21,6 +22,7 @@ export function loadConfig(yamlPath: string): Config {
     prTarget,
     promptFilePath,
     instructionFileName,
+    maxLines,
   } = config;
 
   if (repo === undefined || base == undefined || featureBranch == undefined) {
@@ -36,5 +38,6 @@ export function loadConfig(yamlPath: string): Config {
     prTarget,
     promptFilePath: promptFilePath ?? "./PROMPT.md",
     instructionFileName: instructionFileName ?? "instructions.md",
+    maxLines: maxLines ?? 100,
   };
 }

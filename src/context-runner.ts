@@ -19,6 +19,7 @@ export async function contextGenerationRunner(configFilePath: string) {
     basePath,
     tmpPath,
     config.instructionFileName,
+    config.maxLines,
     true
   );
 }

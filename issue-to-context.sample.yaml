@@ -7,3 +7,4 @@ prTarget: main # if PR is provided for baseBranch, specify target branch here - 
 promptFilePath: ./PROMPT.md
 # Optional override for instruction file name (defaults to instructions.md))
 # instructionFileName: instructions.md
+maxLines: 100 # maximum number of lines to include in instructions.md file
