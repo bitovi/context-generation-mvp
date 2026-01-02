@@ -91,6 +91,9 @@ Only use categories and file types present in this project.
 - **Do not** include invented best practices
 - **Do not** list categories or conventions that aren’t supported by the codebase
 - **Do not** omit any categories or domains defined in the analysis
+- Maximum file lines: `{max_lines}`
+
+If the file is more than `{max_lines}` lines, identify the most important information and distill it down to `${max_lines}` lines. It's important the file stays within the required limit.
 
 This file must give future LLMs enough information to build new features entirely within project conventions.
 
